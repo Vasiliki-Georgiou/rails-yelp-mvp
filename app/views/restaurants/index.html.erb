@@ -8,7 +8,8 @@
             <li  class="card-title text-center fw-bold">
               <%= restaurant.name %>
             </li>
-
+             <%= link_to "Modify restaurant", edit_restaurant_path(restaurant), class:"btn btn-light mb-2" %>
+             <%= link_to "Delete restaurant", restaurant_path(restaurant), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
           </div>
       </div>
         <% end %>
