@@ -1,10 +1,16 @@
-<h1>Add your restaurant here</h1>
+<header>
+  <h1 class="text-center mt-2 mb-4">Add your restaurant here</h1>
+</header>
 
-<%= simple_form_for(@restaurant) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :phone_number %>
-  <%= f.input :category, as: :select, collection: Restaurant::CATEGORIES%>
-  <%= f.submit class: "btn btn-primary p-3 border-2" %>
-  <%= link_to "Back to restaurants", restaurants_path, class: "btn btn-warning p-3 border-2" %>
-<% end %>
+<div class="form-wrapper mb-5">
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category, as: :select, collection: Restaurant::CATEGORIES%>
+    <div class="d-flex justify-content-center mt-2">
+      <%= f.submit class: "btn btn-primary p-3 border-2 me-2" %>
+      <%= link_to "Back to restaurants", restaurants_path, class: "btn btn-dark p-3 border-2" %>
+    </div>
+  <% end %>
+</div>
